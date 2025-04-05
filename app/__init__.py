@@ -4,6 +4,7 @@ from app.routers import (
     authorize_b2_router,
     get_upload_url_b2_router,
     get_naver_news_router,
+    get_yh_finance_news_router,
 )
 
 
@@ -29,6 +30,12 @@ def create_app():
         get_naver_news_router,
         prefix="/api",
         tags=["Get_naver_news"],
+    )
+    
+    app.include_router(
+        get_yh_finance_news_router,
+        prefix="/api",
+        tags=["Get_yh_finance_news"],
     )
 
     setup_exception_handlers(app)

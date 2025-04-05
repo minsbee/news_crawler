@@ -51,11 +51,6 @@ async def get_naver_news_urls(code=101, page_num=1, date=nowtime):
                     news_list = soup.select(
                         ".section_article .sa_list .sa_item .sa_item_inner .sa_item_flex .sa_text"
                     )
-                    news_list.extend(
-                        soup.select(
-                            ".section_article .sa_list .sa_item .sa_item_inner .sa_item_flex .sa_text"
-                        )
-                    )
                     logger.debug(
                         f"📝 페이지 {i}에서 {len(news_list)}개의 뉴스 항목 발견"
                     )
